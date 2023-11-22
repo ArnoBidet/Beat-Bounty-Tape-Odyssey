@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2tfnfrf1tfn2"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_emiac"]
+[ext_resource type="Texture2D" uid="uid://dahf77eh55tsn" path="res://snake.png" id="2_kffaj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtwqd"]
+radius = 1.5
+height = 6.0
+
+[node name="Area2D_Bullet" type="Area2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_emiac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4.36667)
+shape = SubResource("CapsuleShape2D_gtwqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.9407e-08, 1.49012e-08)
+rotation = -1.5708
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_kffaj")

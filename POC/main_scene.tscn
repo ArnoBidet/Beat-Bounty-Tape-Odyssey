@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ekf5piwplqo"]
+
+[ext_resource type="PackedScene" uid="uid://coiwmnyvqwv8k" path="res://player.tscn" id="1_qcgbi"]
+[ext_resource type="PackedScene" uid="uid://wddfw5tfl8bu" path="res://crate.tscn" id="2_57edr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_qcgbi")]
+top_level = true
+position = Vector2(571, 315)
+
+[node name="crate" parent="." instance=ExtResource("2_57edr")]
+position = Vector2(223, 203)
+
+[node name="crate2" parent="." instance=ExtResource("2_57edr")]
+position = Vector2(814, 270)
+
+[node name="crate3" parent="." instance=ExtResource("2_57edr")]
+position = Vector2(353, 417)
