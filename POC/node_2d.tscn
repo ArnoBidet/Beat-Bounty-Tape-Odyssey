@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://btupufedvlwe6"]
+
+[ext_resource type="Texture2D" uid="uid://ctbkqejxc53xi" path="res://ennemie 1/wake.png" id="1_ljnvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8rws"]
+atlas = ExtResource("1_ljnvl")
+region = Rect2(11, 52, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nwx"]
+atlas = ExtResource("1_ljnvl")
+region = Rect2(11, 78, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcxe7"]
+atlas = ExtResource("1_ljnvl")
+region = Rect2(11, 104, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygff2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8rws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5nwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcxe7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrepo"]
+radius = 89.0
+height = 344.0
+
+[node name="ennemie bof" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(372, 310)
+scale = Vector2(15.3297, 15.2308)
+sprite_frames = SubResource("SpriteFrames_ygff2")
+animation = &"idle"
+frame_progress = 0.815802
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(349, 325)
+shape = SubResource("CapsuleShape2D_vrepo")
