@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4hrkc7dajgjx"]
+
+[ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://trumpet.png" id="1_bt5uo"]
+[ext_resource type="Script" path="res://weapon.gd" id="2_dgscq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u008v"]
+atlas = ExtResource("1_bt5uo")
+region = Rect2(0, 0, 640, 310)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjqyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u008v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Weapon" type="AnimatedSprite2D"]
+show_behind_parent = true
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_vjqyv")
+offset = Vector2(320, 10)
+script = ExtResource("2_dgscq")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(477, 0)
