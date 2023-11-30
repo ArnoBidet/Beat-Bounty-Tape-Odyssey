@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://coiwmnyvqwv8k"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_7w5xx"]
-[ext_resource type="Texture2D" uid="uid://clbgva5qtmj0n" path="res://player.png" id="2_jkpn6"]
-[ext_resource type="PackedScene" uid="uid://bxh5vb2rfbayc" path="res://HUD.tscn" id="4_ej4ep"]
-[ext_resource type="PackedScene" uid="uid://d4hrkc7dajgjx" path="res://weapon.tscn" id="4_l2v58"]
+[ext_resource type="Script" path="res://characters/player.gd" id="1_7w5xx"]
+[ext_resource type="Texture2D" uid="uid://clbgva5qtmj0n" path="res://assets/player.png" id="2_jkpn6"]
+[ext_resource type="PackedScene" path="res://hud/HUD.tscn" id="4_ej4ep"]
+[ext_resource type="PackedScene" uid="uid://d4hrkc7dajgjx" path="res://weapons/weapon.tscn" id="4_l2v58"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eenlq"]
 animations = [{

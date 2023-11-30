@@ -4,7 +4,7 @@ var n = 0
 
 func _process(delta):
 	if( n%50 == 0):
-		var note1 = preload("res://note.tscn").instantiate()
+		var note1 = preload("res://hud/note.tscn").instantiate()
 		add_child(note1)
 	n+=1
 	

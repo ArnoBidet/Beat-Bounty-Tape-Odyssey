@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wddfw5tfl8bu"]
 
-[ext_resource type="Texture2D" uid="uid://b6k73pcu6owhg" path="res://icon.svg" id="1_o1nuw"]
+[ext_resource type="Texture2D" uid="uid://b6k73pcu6owhg" path="res://assets/icon.svg" id="1_w7hci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yt23c"]
 size = Vector2(1023, 973.5)
@@ -19,4 +19,4 @@ debug_color = Color(0.137255, 0.576471, 0.788235, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(47.3, 42.8)
 scale = Vector2(0.839062, 0.76875)
-texture = ExtResource("1_o1nuw")
+texture = ExtResource("1_w7hci")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxh5vb2rfbayc"]
 
-[ext_resource type="Script" path="res://HUD.gd" id="1_lbkpd"]
+[ext_resource type="Script" path="res://hud/HUD.gd" id="1_jrooq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6arfg"]
 size = Vector2(20, 34)
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_lbkpd")
+script = ExtResource("1_jrooq")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 20.0

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var speed: int = 500  
 
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://weapons/bullet.tscn")
 var canShoot = false
 
 func shoot():
@@ -16,7 +16,7 @@ func Canshoot():
 	canShoot = not canShoot
 
 func _physics_process(delta):
-	var note = get_node("res://note.tscn")
+	var note = get_node("res://hud/note.tscn")
 	#note.CanShoot.connect(Canshoot)
 	
 	var target_position = get_global_mouse_position()

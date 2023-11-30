@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4hrkc7dajgjx"]
 
-[ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://trumpet.png" id="1_bt5uo"]
-[ext_resource type="Script" path="res://weapon.gd" id="2_dgscq"]
+[ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://assets/trumpet.png" id="1_bt5uo"]
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="2_dgscq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u008v"]
 atlas = ExtResource("1_bt5uo")
