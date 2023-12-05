@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://coiwmnyvqwv8k"]
+[gd_scene load_steps=5 format=3 uid="uid://coiwmnyvqwv8k"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_7w5xx"]
 [ext_resource type="Texture2D" uid="uid://clbgva5qtmj0n" path="res://assets/player.png" id="2_jkpn6"]
-[ext_resource type="PackedScene" path="res://hud/HUD.tscn" id="4_ej4ep"]
-[ext_resource type="PackedScene" uid="uid://d4hrkc7dajgjx" path="res://weapons/weapon.tscn" id="4_l2v58"]
+[ext_resource type="PackedScene" uid="uid://dqjlhojwtlvgc" path="res://hud/HUD.tscn" id="4_ej4ep"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eenlq"]
 animations = [{
@@ -25,16 +24,16 @@ script = ExtResource("1_7w5xx")
 [node name="HUD" parent="." instance=ExtResource("4_ej4ep")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(19, 0)
 sprite_frames = SubResource("SpriteFrames_eenlq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(170, 328, -151, 326, -39, 121, -87, -36, 122, -34, 82, 120)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
-[node name="Weapon" parent="." instance=ExtResource("4_l2v58")]
-show_behind_parent = false
-position = Vector2(19, -88)
+[node name="Weapons" type="Node2D" parent="."]
 
+[connection signal="HasShot" from="." to="HUD" method="_on_player_has_shot"]
 [connection signal="CanShoot" from="HUD" to="." method="_on_hud_can_shoot"]

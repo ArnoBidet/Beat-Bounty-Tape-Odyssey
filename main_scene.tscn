@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ekf5piwplqo"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ekf5piwplqo"]
 
 [ext_resource type="PackedScene" uid="uid://coiwmnyvqwv8k" path="res://characters/player.tscn" id="1_qcgbi"]
 [ext_resource type="PackedScene" uid="uid://wddfw5tfl8bu" path="res://room/crate.tscn" id="2_57edr"]
+[ext_resource type="PackedScene" uid="uid://oforttkyiauf" path="res://weapons/guitare.tscn" id="3_cjmqx"]
+[ext_resource type="PackedScene" uid="uid://d1rjjl1ds4gmh" path="res://weapons/snake_trumpet.tscn" id="4_loiu4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,10 +12,18 @@ top_level = true
 position = Vector2(571, 315)
 
 [node name="crate" parent="." instance=ExtResource("2_57edr")]
-position = Vector2(223, 203)
+position = Vector2(85, 180)
 
 [node name="crate2" parent="." instance=ExtResource("2_57edr")]
-position = Vector2(814, 270)
+position = Vector2(86, 373)
 
 [node name="crate3" parent="." instance=ExtResource("2_57edr")]
-position = Vector2(353, 417)
+position = Vector2(76, 520)
+
+[node name="guitare" parent="." instance=ExtResource("3_cjmqx")]
+position = Vector2(770, 453)
+scale = Vector2(3, 3)
+
+[node name="snake_trumpet" parent="." instance=ExtResource("4_loiu4")]
+position = Vector2(766, 302)
+scale = Vector2(3, 3)

@@ -1,29 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4hrkc7dajgjx"]
+[gd_scene load_steps=3 format=3 uid="uid://bvousdofgurdn"]
 
-[ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://assets/trumpet.png" id="1_bt5uo"]
+[ext_resource type="Texture2D" uid="uid://btb62cgup06ds" path="res://assets/E_key.png" id="2_0n02l"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="2_dgscq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u008v"]
-atlas = ExtResource("1_bt5uo")
-region = Rect2(0, 0, 640, 310)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vjqyv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u008v")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="Weapon" type="AnimatedSprite2D"]
-show_behind_parent = true
-position = Vector2(-1, -1)
-sprite_frames = SubResource("SpriteFrames_vjqyv")
-offset = Vector2(320, 10)
+[node name="weapon" type="Node2D"]
 script = ExtResource("2_dgscq")
 
-[node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(477, 0)
+[node name="pick_up" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -20)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("2_0n02l")
+
+[node name="weapon_outlet" type="Sprite2D" parent="."]
+
+[node name="player_detector" type="Area2D" parent="."]
+
+[node name="weapon_grab_radius" type="CollisionPolygon2D" parent="player_detector"]
+
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="player_detector" to="." method="_on_player_detector_body_exited"]
