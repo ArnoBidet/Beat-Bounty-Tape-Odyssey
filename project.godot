@@ -15,6 +15,11 @@ run/main_scene="res://main_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[display]
+
+mouse_cursor/custom_image="res://assets/cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(20, 20)
+
 [dotnet]
 
 project/assembly_name="PROJET 3A"
