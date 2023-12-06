@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxh5vb2rfbayc"]
+[gd_scene load_steps=3 format=3 uid="uid://dqjlhojwtlvgc"]
 
 [ext_resource type="Script" path="res://hud/HUD.gd" id="1_jrooq"]
 
@@ -26,11 +26,19 @@ offset_top = 37.0
 offset_right = 504.0
 offset_bottom = 77.0
 
+[node name="NoteEndTrail" type="Area2D" parent="."]
+position = Vector2(31, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteEndTrail"]
+position = Vector2(483, 58)
+shape = SubResource("RectangleShape2D_6arfg")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(483, 58)
 shape = SubResource("RectangleShape2D_6arfg")
 
+[connection signal="area_entered" from="NoteEndTrail" to="." method="_on_note_end_trail_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
