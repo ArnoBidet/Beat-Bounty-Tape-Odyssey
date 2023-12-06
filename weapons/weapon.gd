@@ -20,7 +20,6 @@ func _physics_process(_delta):
 		self.position=Vector2(0,0)
 		look_at(get_global_mouse_position())
 		self.position = Vector2(cos(deg_to_rad(global_rotation_degrees)), sin(deg_to_rad(global_rotation_degrees))) * 700
-		print(global_rotation_degrees)
 		var look = get_global_mouse_position() - global_transform.origin
 		if not( global_rotation_degrees <= 90 and global_rotation_degrees >= -90):
 			set_scale(Vector2(init_scale.x,-init_scale.y))
