@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1rjjl1ds4gmh"]
 
 [ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_x2xyt"]
-[ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://assets/trumpet.png" id="2_8ufo0"]
+[ext_resource type="Texture2D" uid="uid://bfqqabsl30cmv" path="res://assets/trumpet_with_snake.png" id="2_add3q"]
 
 [node name="snake_trumpet" instance=ExtResource("1_x2xyt")]
 
@@ -11,8 +11,7 @@ visible = false
 [node name="weapon_outlet" parent="." index="1"]
 texture_filter = 1
 scale = Vector2(0.09, 0.09)
-texture = ExtResource("2_8ufo0")
-region_enabled = true
+texture = ExtResource("2_add3q")
 region_rect = Rect2(47.2164, 15.3988, 542.742, 220.64)
 
 [node name="player_detector" parent="." index="2"]

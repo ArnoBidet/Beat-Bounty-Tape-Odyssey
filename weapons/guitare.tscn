@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://oforttkyiauf"]
 
 [ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_xunvw"]
-[ext_resource type="Texture2D" uid="uid://dpinljhe2u3gr" path="res://assets/guitare.png" id="2_f86ok"]
+[ext_resource type="Texture2D" uid="uid://qu1a5h3om4xd" path="res://assets/guitare_good.png" id="2_hgcee"]
 
 [node name="guitare" instance=ExtResource("1_xunvw")]
 
@@ -10,9 +10,8 @@ visible = false
 
 [node name="weapon_outlet" parent="." index="1"]
 texture_filter = 1
-texture = ExtResource("2_f86ok")
-region_enabled = true
-region_rect = Rect2(0, 0, 44.4196, 17.6424)
+texture = ExtResource("2_hgcee")
+region_rect = Rect2(0.404366, 0.0259361, 43.6472, 17.2967)
 
 [node name="player_detector" parent="." index="2"]
 visible = false
