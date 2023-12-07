@@ -93,7 +93,7 @@ func pick_up_weapon(weapon: Node2D) -> void:
 	weapon.set_deferred("position", Vector2(0,0))
 	weapon.set_deferred("offset", Vector2(250,0))
 	weapon.set_deferred("z_index", 200)
-	weapon.get_node("weapon_outlet").set_deferred("scale",Vector2(2,2))
+	weapon.get_node("weapon_outlet").set_deferred("scale",Vector2(10,10))
 	
 	
 
