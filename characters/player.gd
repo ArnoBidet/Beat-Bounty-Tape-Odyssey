@@ -66,6 +66,7 @@ func _on_hud_can_shoot(state):
 
 # WEAPON RELATED
 func switch_weapon(direction: int) -> void:
+	if current_weapon == null : return
 	var prev_index: int = current_weapon.get_index()
 	var index: int = prev_index
 	if direction == MOUSE_BUTTON_WHEEL_UP:
