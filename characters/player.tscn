@@ -17,23 +17,22 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(605, 305)
-scale = Vector2(0.2, 0.2)
 motion_mode = 1
 script = ExtResource("1_7w5xx")
 
 [node name="HUD" parent="." instance=ExtResource("4_ej4ep")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_eenlq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
+scale = Vector2(0.2, 0.2)
 polygon = PackedVector2Array(170, 328, -151, 326, -39, 121, -87, -36, 122, -34, 82, 120)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
+scale = Vector2(0.2, 0.2)
 
 [node name="Weapons" type="Node2D" parent="."]
-
-[connection signal="HasShot" from="." to="HUD" method="_on_player_has_shot"]
-[connection signal="CanShoot" from="HUD" to="." method="_on_hud_can_shoot"]

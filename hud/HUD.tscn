@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://hud/HUD.gd" id="1_jrooq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6arfg"]
-size = Vector2(20, 34)
+size = Vector2(28, 34)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_jrooq")
@@ -26,19 +26,11 @@ offset_top = 37.0
 offset_right = 504.0
 offset_bottom = 77.0
 
-[node name="NoteEndTrail" type="Area2D" parent="."]
-position = Vector2(31, 0)
+[node name="NoteStrikeZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteEndTrail"]
-position = Vector2(483, 58)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteStrikeZone"]
+position = Vector2(487, 58)
 shape = SubResource("RectangleShape2D_6arfg")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(483, 58)
-shape = SubResource("RectangleShape2D_6arfg")
-
-[connection signal="area_entered" from="NoteEndTrail" to="." method="_on_note_end_trail_area_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="NoteStrikeZone" to="." method="_on_note_strike_zone_area_entered"]
+[connection signal="area_exited" from="NoteStrikeZone" to="." method="_on_note_strike_zone_area_exited"]

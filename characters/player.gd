@@ -1,34 +1,22 @@
 extends CharacterBody2D
 
+class_name Player
+
 signal weapon_switched(prev_index, new_index)
 signal weapon_picked_up(weapon_texture)
 signal weapon_droped(index)
-signal HasShot()
 @export var speed: int = 500  
 
-var bullet = preload("res://weapons/bullet.tscn")
-var canShoot = false
 
 var weapon_inventory = []
 var equipped_weapon_index: int = 0
-var current_weapon: Node2D
+var current_weapon: Weapon
 @onready var weapons: Node2D = get_node("Weapons")
 
 func _ready() -> void:
 	if weapons.get_child(0) != null:
 		emit_signal("weapon_picked_up", weapons.get_child(0).get_texture())
 
-
-func shoot():
-	var bullet_instance = bullet.instantiate()
-	get_parent().add_child(bullet_instance)
-	bullet_instance.rotation = $Weapon.rotation + PI/2
-
-	bullet_instance.global_position = $Weapon/Muzzle.global_position
-
-
-func Canshoot():
-	canShoot = not canShoot
 
 func _physics_process(_delta):
 	var target_position = get_global_mouse_position()
@@ -46,10 +34,6 @@ func _physics_process(_delta):
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("click") :
-		if canShoot :
-			shoot()
-		HasShot.emit()
 	if event is InputEventMouseButton :
 		var emb : InputEventMouseButton = event
 		if emb.is_pressed() :
@@ -60,27 +44,32 @@ func _unhandled_input(event):
 			
 		
 
-
-func _on_hud_can_shoot(state):
-	canShoot = state
-
 # WEAPON RELATED
 func switch_weapon(direction: int) -> void:
-	if current_weapon == null : return
-	var prev_index: int = current_weapon.get_index()
+	if weapons.get_child_count() == 0 : return
+	
+	var prev_index: int = 0 
 	var index: int = prev_index
-	if direction == MOUSE_BUTTON_WHEEL_UP:
-		index -= 1
+	
+	if current_weapon != null :
+		prev_index = current_weapon.get_index()
+		index = prev_index
+		current_weapon.hide()
+		
+		current_weapon.equip(false)
+		if direction == MOUSE_BUTTON_WHEEL_UP:
+			index += 1
+		else:
+			index -= 1
+			
+		if index > weapons.get_child_count() - 1:
+				index = 0
 		if index < 0:
 			index = weapons.get_child_count() - 1
-	else:
-		index += 1
-		if index > weapons.get_child_count() - 1:
-			index = 0
 
-	current_weapon.hide()
 	current_weapon = weapons.get_child(index)
 	current_weapon.show()
+	current_weapon.equip(true)
 
 	emit_signal("weapon_switched", prev_index, index)
 
@@ -93,18 +82,14 @@ func pick_up_weapon(weapon: Node2D) -> void:
 	weapon.set_deferred("position", Vector2(0,0))
 	weapon.set_deferred("offset", Vector2(250,0))
 	weapon.set_deferred("z_index", 200)
-	weapon.get_node("weapon_outlet").set_deferred("scale",Vector2(10,10))
-	
-	
-
-	if current_weapon != null:
-		current_weapon.hide()
-		# current_weapon.cancel_attack()
-	current_weapon = weapon
-
+	call_deferred("switch_weapon",MOUSE_BUTTON_WHEEL_DOWN)
+	call_deferred("_set_up_new_weapon")
 	emit_signal("weapon_picked_up", weapon.get_texture())
 	emit_signal("weapon_switched", equipped_weapon_index, new_index)
-	
+
+func _set_up_new_weapon():
+	var hud : HUD = get_node("HUD")
+	hud.CanShoot.connect(current_weapon._on_can_shoot)
 
 func _drop_weapon() -> void:
 	weapon_inventory.remove_at(current_weapon.get_index() - 1)
@@ -114,10 +99,7 @@ func _drop_weapon() -> void:
 	emit_signal("weapon_droped", weapon_to_drop.get_index())
 
 	weapons.call_deferred("remove_child", weapon_to_drop)
-	get_parent().call_deferred("add_child", weapon_to_drop)
+	get_tree().call_deferred("add_child", weapon_to_drop)
 	weapon_to_drop.set_owner(get_parent())
 	await weapon_to_drop.tree_entered
 	weapon_to_drop.show()
-
-	var throw_dir: Vector2 = (get_global_mouse_position() - position).normalized()
-	weapon_to_drop.interpolate_pos(position, position + throw_dir * 50)

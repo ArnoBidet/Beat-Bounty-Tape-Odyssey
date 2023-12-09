@@ -21,9 +21,7 @@ position = Vector2(86, 373)
 position = Vector2(76, 520)
 
 [node name="guitare" parent="." instance=ExtResource("3_cjmqx")]
-position = Vector2(770, 453)
-scale = Vector2(3, 3)
+position = Vector2(1009, 228)
 
 [node name="snake_trumpet" parent="." instance=ExtResource("4_loiu4")]
-position = Vector2(766, 302)
-scale = Vector2(3, 3)
+position = Vector2(902, 518)

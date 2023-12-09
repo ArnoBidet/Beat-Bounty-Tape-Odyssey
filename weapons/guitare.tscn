@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://oforttkyiauf"]
+[gd_scene load_steps=5 format=3 uid="uid://oforttkyiauf"]
 
 [ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_xunvw"]
+[ext_resource type="Script" path="res://weapons/range_weapon.gd" id="2_8ngm0"]
 [ext_resource type="Texture2D" uid="uid://qu1a5h3om4xd" path="res://assets/guitare_good.png" id="2_hgcee"]
+[ext_resource type="PackedScene" uid="uid://bqd4kojjl0cjl" path="res://weapons/guitare_bullet.tscn" id="3_lq3m6"]
 
 [node name="guitare" instance=ExtResource("1_xunvw")]
+script = ExtResource("2_8ngm0")
+bullet = ExtResource("3_lq3m6")
 
 [node name="pick_up" parent="." index="0"]
 visible = false
 
 [node name="weapon_outlet" parent="." index="1"]
 texture_filter = 1
+scale = Vector2(3, 3)
 texture = ExtResource("2_hgcee")
 region_rect = Rect2(0.404366, 0.0259361, 43.6472, 17.2967)
 
 [node name="player_detector" parent="." index="2"]
-visible = false
+scale = Vector2(3, 3)
 
 [node name="weapon_grab_radius" parent="player_detector" index="0"]
 position = Vector2(-21, -9)

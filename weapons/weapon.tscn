@@ -8,8 +8,8 @@ script = ExtResource("2_dgscq")
 
 [node name="pick_up" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -20)
-scale = Vector2(0.1875, 0.1875)
+position = Vector2(0, -35)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_0n02l")
 
 [node name="weapon_outlet" type="Sprite2D" parent="."]

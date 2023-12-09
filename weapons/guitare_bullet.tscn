@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqd4kojjl0cjl"]
+
+[ext_resource type="Script" path="res://weapons/bullet.gd" id="1_ag8o4"]
+[ext_resource type="Texture2D" uid="uid://ft4s4b3sj60p" path="res://assets/guitare_bullet.png" id="2_sb0b7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtwqd"]
+radius = 1.75
+height = 4.25
+
+[node name="Area2D_Bullet" type="Area2D"]
+script = ExtResource("1_ag8o4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_gtwqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-8.9407e-08, 1.49012e-08)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("2_sb0b7")

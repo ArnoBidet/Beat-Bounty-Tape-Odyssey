@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1rjjl1ds4gmh"]
+[gd_scene load_steps=5 format=3 uid="uid://d1rjjl1ds4gmh"]
 
 [ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_x2xyt"]
 [ext_resource type="Texture2D" uid="uid://bfqqabsl30cmv" path="res://assets/trumpet_with_snake.png" id="2_add3q"]
+[ext_resource type="Script" path="res://weapons/range_weapon.gd" id="2_dep4i"]
+[ext_resource type="PackedScene" uid="uid://c2tfnfrf1tfn2" path="res://weapons/snake_bullet.tscn" id="3_dydm8"]
 
 [node name="snake_trumpet" instance=ExtResource("1_x2xyt")]
-
-[node name="pick_up" parent="." index="0"]
-visible = false
+script = ExtResource("2_dep4i")
+bullet = ExtResource("3_dydm8")
 
 [node name="weapon_outlet" parent="." index="1"]
 texture_filter = 1
-scale = Vector2(0.09, 0.09)
+scale = Vector2(3, 3)
 texture = ExtResource("2_add3q")
 region_rect = Rect2(47.2164, 15.3988, 542.742, 220.64)
 
 [node name="player_detector" parent="." index="2"]
 visible = false
+scale = Vector2(3, 3)
 
 [node name="weapon_grab_radius" parent="player_detector" index="0"]
 position = Vector2(-25, -9)
