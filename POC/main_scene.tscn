@@ -8,6 +8,7 @@
 [node name="player" parent="." instance=ExtResource("1_qcgbi")]
 top_level = true
 position = Vector2(571, 315)
+scale = Vector2(0.2, 0.19908)
 
 [node name="crate" parent="." instance=ExtResource("2_57edr")]
 position = Vector2(223, 203)

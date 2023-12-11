@@ -11,12 +11,8 @@ func shoot():
 
 	bullet_instance.global_position = $Weapon/Muzzle.global_position
 
-	
-func Canshoot():
-	canShoot = not canShoot
 
 func _physics_process(delta):
-	var note = get_node("res://note.tscn")
 	#note.CanShoot.connect(Canshoot)
 	
 	var target_position = get_global_mouse_position()

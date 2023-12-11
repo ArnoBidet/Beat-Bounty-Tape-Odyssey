@@ -3,7 +3,8 @@ signal CanShoot()
 var n = 0
 
 func _process(delta):
-	if( n%50 == 0):
+	if( n == 50):
+		n=0
 		var note1 = preload("res://note.tscn").instantiate()
 		add_child(note1)
 	n+=1

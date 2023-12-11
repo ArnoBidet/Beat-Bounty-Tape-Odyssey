@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4hrkc7dajgjx"]
+[gd_scene load_steps=6 format=3 uid="uid://d4hrkc7dajgjx"]
 
 [ext_resource type="Texture2D" uid="uid://n2fhtqpp2dyx" path="res://trumpet.png" id="1_bt5uo"]
 [ext_resource type="Script" path="res://weapon.gd" id="2_dgscq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u008v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgvwv"]
 atlas = ExtResource("1_bt5uo")
-region = Rect2(0, 0, 640, 310)
+region = Rect2(0, 0, 640, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y4g0"]
+atlas = ExtResource("1_bt5uo")
+region = Rect2(0, 300, 640, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjqyv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u008v")
+"texture": SubResource("AtlasTexture_cgvwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y4g0")
 }],
 "loop": true,
 "name": &"default",
