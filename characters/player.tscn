@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://coiwmnyvqwv8k"]
+[gd_scene load_steps=7 format=3 uid="uid://coiwmnyvqwv8k"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_7w5xx"]
 [ext_resource type="Texture2D" uid="uid://clbgva5qtmj0n" path="res://assets/player.png" id="2_jkpn6"]
+[ext_resource type="PackedScene" uid="uid://d27piq2ivis2y" path="res://generic/hitbox_component.tscn" id="4_8qqbc"]
 [ext_resource type="PackedScene" uid="uid://dqjlhojwtlvgc" path="res://hud/HUD.tscn" id="4_ej4ep"]
+[ext_resource type="PackedScene" uid="uid://c6vkxuims8d8l" path="res://generic/health_component.tscn" id="5_orong"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eenlq"]
 animations = [{
@@ -26,13 +28,21 @@ script = ExtResource("1_7w5xx")
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_eenlq")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-scale = Vector2(0.2, 0.2)
-polygon = PackedVector2Array(170, 328, -151, 326, -39, 121, -87, -36, 122, -34, 82, 120)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 scale = Vector2(0.2, 0.2)
 
 [node name="Weapons" type="Node2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(170, 328, -151, 326, -39, 121, -87, -36, 122, -34, 82, 120)
+
+[node name="hitbox_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_8qqbc")]
+health_component = NodePath("../health_component")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox_component"]
+scale = Vector2(0.04, 0.04)
+polygon = PackedVector2Array(170, 328, -151, 326, -39, 121, -87, -36, 122, -34, 82, 120)
+
+[node name="health_component" parent="." instance=ExtResource("5_orong")]

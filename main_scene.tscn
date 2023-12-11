@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0ekf5piwplqo"]
+[gd_scene load_steps=6 format=3 uid="uid://b0ekf5piwplqo"]
 
 [ext_resource type="PackedScene" uid="uid://coiwmnyvqwv8k" path="res://characters/player.tscn" id="1_qcgbi"]
 [ext_resource type="PackedScene" uid="uid://wddfw5tfl8bu" path="res://room/crate.tscn" id="2_57edr"]
 [ext_resource type="PackedScene" uid="uid://oforttkyiauf" path="res://weapons/guitare.tscn" id="3_cjmqx"]
 [ext_resource type="PackedScene" uid="uid://d1rjjl1ds4gmh" path="res://weapons/snake_trumpet.tscn" id="4_loiu4"]
+[ext_resource type="PackedScene" uid="uid://1kqjyeb3dfp0" path="res://characters/ennemies/dasher.tscn" id="5_c7qo7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,3 +26,6 @@ position = Vector2(1009, 228)
 
 [node name="snake_trumpet" parent="." instance=ExtResource("4_loiu4")]
 position = Vector2(902, 518)
+
+[node name="dasher" parent="." instance=ExtResource("5_c7qo7")]
+position = Vector2(830, 33)
