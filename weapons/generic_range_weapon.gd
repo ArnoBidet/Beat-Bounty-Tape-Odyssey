@@ -18,6 +18,15 @@ func shoot():
 	get_tree().get_root().add_child(bullet_instance)
 	bullet_instance.rotation = self.rotation + PI/2
 	bullet_instance.global_position = self.global_position
+	apply_recoil()
+
+func apply_recoil():
+	var tween = get_tree().create_tween()
+	var recoil_strength = 50  # Adjust the strength of the recoil
+	var recoil_duration = 0.05  # Adjust the duration of the recoil
+
+	tween.tween_property($weapon_outlet, "position", Vector2(-recoil_strength,0), recoil_duration)
+	tween.tween_property($weapon_outlet, "position", Vector2(0,0), recoil_duration)
 
 
 func _unhandled_input(event):
