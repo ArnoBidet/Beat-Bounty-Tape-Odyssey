@@ -10,7 +10,7 @@ func _ready():
 
 func damage(attack: Attack):
 	health -= attack.attack_damage
-	print(health," ", attack.attack_damage)
+	$AudioStreamPlayer2D.play()
 	
 	if health <= 0:
 		get_parent().queue_free()
