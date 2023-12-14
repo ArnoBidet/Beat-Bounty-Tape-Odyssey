@@ -16,7 +16,7 @@ height = 80.0
 height = 68.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jydrc"]
-radius = 76.1052
+radius = 79.1012
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6burj"]
 radius = 75.0
@@ -41,7 +41,8 @@ shape = SubResource("CapsuleShape2D_l2cnr")
 
 [node name="health_component" parent="." instance=ExtResource("3_xnr5g")]
 
-[node name="hitbox_component" parent="." instance=ExtResource("4_lgubp")]
+[node name="hitbox_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_lgubp")]
+health_component = NodePath("../health_component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_component"]
 shape = SubResource("CircleShape2D_jydrc")
