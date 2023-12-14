@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvousdofgurdn"]
 
+[ext_resource type="Script" path="res://weapons/generic_weapon.gd" id="1_vpcv6"]
 [ext_resource type="Texture2D" uid="uid://btb62cgup06ds" path="res://assets/E_key.png" id="2_0n02l"]
-[ext_resource type="Script" path="res://weapons/weapon.gd" id="2_dgscq"]
 
 [node name="weapon" type="Node2D"]
-script = ExtResource("2_dgscq")
+script = ExtResource("1_vpcv6")
 
 [node name="pick_up" type="Sprite2D" parent="."]
 texture_filter = 1

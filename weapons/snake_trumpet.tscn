@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1rjjl1ds4gmh"]
 
-[ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_x2xyt"]
+[ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/generic_weapon.tscn" id="1_x2xyt"]
 [ext_resource type="Texture2D" uid="uid://bfqqabsl30cmv" path="res://assets/trumpet_with_snake.png" id="2_add3q"]
-[ext_resource type="Script" path="res://weapons/range_weapon.gd" id="2_dep4i"]
-[ext_resource type="PackedScene" uid="uid://c2tfnfrf1tfn2" path="res://weapons/snake_bullet.tscn" id="3_dydm8"]
+[ext_resource type="Script" path="res://weapons/generic_range_weapon.gd" id="2_dep4i"]
+[ext_resource type="PackedScene" uid="uid://dgkpny226y75b" path="res://weapons/snake_bullet.tscn" id="3_dydm8"]
 
 [node name="snake_trumpet" instance=ExtResource("1_x2xyt")]
 script = ExtResource("2_dep4i")

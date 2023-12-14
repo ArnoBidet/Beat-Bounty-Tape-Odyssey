@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdhjppj4wj16"]
+
+[ext_resource type="Script" path="res://weapons/bullet.gd" id="1_vc6p6"]
+[ext_resource type="PackedScene" uid="uid://bgmrswwtyy8cv" path="res://generic/attack.tscn" id="2_6ii1v"]
+
+[node name="generic_bullet" type="Area2D"]
+script = ExtResource("1_vc6p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.9407e-08, 1.49012e-08)
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="attack" parent="." instance=ExtResource("2_6ii1v")]
+
+[connection signal="area_entered" from="." to="." method="_on_bullet_entered"]

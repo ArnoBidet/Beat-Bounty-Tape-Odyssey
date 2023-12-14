@@ -1,23 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqd4kojjl0cjl"]
+[gd_scene load_steps=5 format=3 uid="uid://cgs4n71nr3s32"]
 
-[ext_resource type="Script" path="res://weapons/bullet.gd" id="1_ag8o4"]
-[ext_resource type="Texture2D" uid="uid://ft4s4b3sj60p" path="res://assets/guitare_bullet.png" id="2_sb0b7"]
+[ext_resource type="PackedScene" uid="uid://bqdhjppj4wj16" path="res://weapons/generic_bullet.tscn" id="1_oa15n"]
+[ext_resource type="Texture2D" uid="uid://ft4s4b3sj60p" path="res://assets/guitare_bullet.png" id="2_2xmfh"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtwqd"]
-radius = 1.75
-height = 4.25
+[sub_resource type="CircleShape2D" id="CircleShape2D_crj54"]
+radius = 26.0192
 
-[node name="Area2D_Bullet" type="Area2D"]
-script = ExtResource("1_ag8o4")
+[sub_resource type="CircleShape2D" id="CircleShape2D_so872"]
+radius = 23.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-scale = Vector2(3, 3)
-shape = SubResource("CapsuleShape2D_gtwqd")
+[node name="generic_bullet" instance=ExtResource("1_oa15n")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" parent="." index="0"]
 texture_filter = 1
-position = Vector2(-8.9407e-08, 1.49012e-08)
-rotation = -1.5708
 scale = Vector2(3, 3)
-texture = ExtResource("2_sb0b7")
+texture = ExtResource("2_2xmfh")
+
+[node name="attack" parent="." index="1"]
+attack_damage = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack" index="0"]
+shape = SubResource("CircleShape2D_crj54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_so872")

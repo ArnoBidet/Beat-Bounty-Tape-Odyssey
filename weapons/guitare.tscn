@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://oforttkyiauf"]
 
-[ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/weapon.tscn" id="1_xunvw"]
-[ext_resource type="Script" path="res://weapons/range_weapon.gd" id="2_8ngm0"]
+[ext_resource type="PackedScene" uid="uid://bvousdofgurdn" path="res://weapons/generic_weapon.tscn" id="1_w103i"]
+[ext_resource type="Script" path="res://weapons/generic_range_weapon.gd" id="2_17wsd"]
 [ext_resource type="Texture2D" uid="uid://qu1a5h3om4xd" path="res://assets/guitare_good.png" id="2_hgcee"]
-[ext_resource type="PackedScene" uid="uid://bqd4kojjl0cjl" path="res://weapons/guitare_bullet.tscn" id="3_lq3m6"]
+[ext_resource type="PackedScene" uid="uid://cgs4n71nr3s32" path="res://weapons/guitare_bullet.tscn" id="3_lq3m6"]
 
-[node name="guitare" instance=ExtResource("1_xunvw")]
-script = ExtResource("2_8ngm0")
+[node name="guitare" instance=ExtResource("1_w103i")]
+script = ExtResource("2_17wsd")
 bullet = ExtResource("3_lq3m6")
 
 [node name="pick_up" parent="." index="0"]
