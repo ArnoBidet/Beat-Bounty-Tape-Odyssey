@@ -40,7 +40,6 @@ func _input(_event):
 		player_near = true
 		pick_up.show()
 		body._drop_weapon()
-		print(body)
 		body = null
 			
 func _on_player_detector_body_entered(_body):
