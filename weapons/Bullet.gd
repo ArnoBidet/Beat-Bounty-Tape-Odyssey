@@ -8,3 +8,8 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	body.queue_free()
 	queue_free()
+
+
+func _on_bullet_entered(area):
+	if area is HitboxComponent:
+		queue_free()
