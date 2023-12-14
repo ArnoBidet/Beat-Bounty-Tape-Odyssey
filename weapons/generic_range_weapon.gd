@@ -19,6 +19,7 @@ func shoot():
 	bullet_instance.rotation = self.rotation + PI/2
 	bullet_instance.global_position = self.global_position
 	apply_recoil()
+	$AudioStreamPlayer2D.play()
 
 func apply_recoil():
 	var tween = get_tree().create_tween()
