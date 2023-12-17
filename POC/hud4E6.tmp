@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://diaqvk3xexysa"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_u2smw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5280h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cirau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcb3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdhrs"]
+size = Vector2(40, 60)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_u2smw")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
+texture_repeat = 2
+offset_left = -20.0
+offset_top = -5.0
+offset_right = 480.0
+offset_bottom = 5.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5280h")
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+clip_contents = true
+custom_minimum_size = Vector2(1, 0)
+offset_top = -30.0
+offset_right = 10.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cirau")
+
+[node name="Panel3" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 50.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcb3h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_xdhrs")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

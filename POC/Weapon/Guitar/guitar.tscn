@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8gx5inkll0vg"]
+
+[ext_resource type="Texture2D" uid="uid://pff075vlxqpc" path="res://Weapon/Guitar/Guitar_gun.png" id="1_lhfm0"]
+[ext_resource type="Script" path="res://Weapon/Guitar/guitar.gd" id="2_soxur"]
+
+[node name="Guitar" type="Sprite2D"]
+position = Vector2(37, 0)
+scale = Vector2(1.21818, 1.3)
+texture = ExtResource("1_lhfm0")
+script = ExtResource("2_soxur")
+
+[node name="Position" type="Marker2D" parent="."]
+position = Vector2(300, 0)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo5s62s0qxl7k"]
+
+[ext_resource type="Script" path="res://Character/Player/player.gd" id="1_hilsn"]
+[ext_resource type="Texture2D" uid="uid://cgtwbdqmx8y46" path="res://Character/Player/player.png" id="2_1ppe8"]
+[ext_resource type="PackedScene" uid="uid://b8gx5inkll0vg" path="res://Weapon/Guitar/guitar.tscn" id="3_7k1ba"]
+[ext_resource type="PackedScene" uid="uid://diaqvk3xexysa" path="res://hud.tscn" id="4_js1hw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qg4r"]
+radius = 1007.07
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j352c"]
+size = Vector2(228, 536)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(576, 326)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_hilsn")
+
+[node name="Funk_Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_1ppe8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Presence" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4qg4r")
+debug_color = Color(1, 0.270588, 0.847059, 0.184314)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Guitar" parent="." instance=ExtResource("3_7k1ba")]
+position = Vector2(0, 53.333)
+offset = Vector2(35, 0)
+
+[node name="Hud" parent="." instance=ExtResource("4_js1hw")]
+position = Vector2(-252, -396)
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-100, -48, -60, 112, -168, 296, 160, 312, 60, 104, 124, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 64)
+shape = SubResource("RectangleShape2D_j352c")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

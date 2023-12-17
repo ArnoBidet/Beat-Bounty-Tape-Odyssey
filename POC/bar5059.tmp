@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b63b8sbt4alqc"]
+
+[ext_resource type="Script" path="res://MiniBar.gd" id="1_aq1ky"]
+[ext_resource type="Texture2D" uid="uid://cb6ubifvved6r" path="res://black bar.png" id="2_o2n5v"]
+[ext_resource type="Texture2D" uid="uid://dwihyav6w5aem" path="res://white_bar.png" id="3_7mmdi"]
+
+[node name="Bar" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_aq1ky")
+
+[node name="BlackBar" type="Sprite2D" parent="."]
+texture = ExtResource("2_o2n5v")
+
+[node name="WhiteBar" type="Sprite2D" parent="."]
+texture = ExtResource("3_7mmdi")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

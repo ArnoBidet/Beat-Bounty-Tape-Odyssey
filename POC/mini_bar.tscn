@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmdvjpj0al4tw"]
+
+[ext_resource type="Texture2D" uid="uid://ck6bbrko0vjfi" path="res://mini_bar_1.png" id="1_8c8qs"]
+[ext_resource type="Script" path="res://MiniBar.gd" id="2_2pvex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uki3j"]
+size = Vector2(89, 166)
+
+[node name="MiniBar" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_8c8qs")
+offset = Vector2(50, 19)
+script = ExtResource("2_2pvex")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
+texture_filter = 1
+position = Vector2(-34.5, -3)
+shape = SubResource("RectangleShape2D_uki3j")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="hitbox" to="." method="_on_hitbox_area_exited"]
