@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: manleydev/butler-publish-itchio-action@master
         env:
-          BUTLER_CREDENTIALS: ${{ secrets.TEST_BUTLER_API_KEY }}
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: HTML
           ITCH_GAME: ${{ vars.ITCH_GAME_ID }}
           ITCH_USER: ${{ vars.ITCH_USERNAME }}
