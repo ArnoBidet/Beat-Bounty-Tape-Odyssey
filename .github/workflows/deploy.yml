@@ -1,0 +1,17 @@
+name: Deploy
+
+on: push
+jobs:
+  deploy:
+    name: Upload to Itch
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    steps:
+      - uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.TEST_BUTLER_API_KEY }}
+          CHANNEL: HTML
+          ITCH_GAME: ${{ vars.ITCH_GAME_ID }}
+          ITCH_USER: ${{ vars.ITCH_USERNAME }}
+          PACKAGE: build/windows
