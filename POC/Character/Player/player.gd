@@ -3,6 +3,7 @@ extends CharacterBody2D
 var Projectile
 var timing
 var shoot_state = 1
+
 func aim():
 	$Guitar.look_at(get_global_mouse_position())
 	if (get_global_mouse_position().x < global_position.x):
