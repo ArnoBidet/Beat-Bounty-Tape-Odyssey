@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6c813tm6l6qq"
-path="res://.godot/imported/player.png-c8ab2028cdef43826683ff3451e2bcfd.ctex"
+uid="uid://dv74f2sw7qmhe"
+path="res://.godot/imported/guitar_gun.png-92a63ee72de1ed4557cbd3c3206c3392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Art/Idle/player.png"
-dest_files=["res://.godot/imported/player.png-c8ab2028cdef43826683ff3451e2bcfd.ctex"]
+source_file="res://Weapons/King Guitar/Sprites/guitar_gun.png"
+dest_files=["res://.godot/imported/guitar_gun.png-92a63ee72de1ed4557cbd3c3206c3392.ctex"]
 
 [params]
 

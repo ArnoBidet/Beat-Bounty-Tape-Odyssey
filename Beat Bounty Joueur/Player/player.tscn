@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcvxvfowse8r3"]
 
-[ext_resource type="Texture2D" uid="uid://6c813tm6l6qq" path="res://Player/Art/Idle/player.png" id="1_w2g3v"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_wbuo1"]
-[ext_resource type="Script" path="res://Atom/Health/health.gd" id="3_tyfhh"]
+[ext_resource type="Texture2D" uid="uid://6c813tm6l6qq" path="res://Player/Sprites/Funk_Player/Idle/funk_player.png" id="2_ngxx6"]
+[ext_resource type="Script" path="res://Axiom/Health/health.gd" id="3_84kxr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_icfhf"]
 radius = 1296.02
@@ -20,10 +20,10 @@ debug_color = Color(0, 0.6, 0.701961, 0.105882)
 polygon = PackedVector2Array(-109, -35, 111, -33, 64, 123, 161, 331, -195, 331, -64, 120)
 
 [node name="Funk_Player" type="Sprite2D" parent="."]
-texture = ExtResource("1_w2g3v")
+texture = ExtResource("2_ngxx6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 
 [node name="Health" type="Node2D" parent="."]
-script = ExtResource("3_tyfhh")
+script = ExtResource("3_84kxr")

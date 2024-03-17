@@ -4,18 +4,19 @@
 [ext_resource type="Script" path="res://Weapon/Guitar/guitar_projectile.gd" id="1_j4i8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5t6w"]
-size = Vector2(117, 194)
+size = Vector2(118, 190)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fnuil"]
-radius = 73.0
-height = 188.0
+radius = 75.0
+height = 190.0
 
 [node name="GuitarProjectile" type="Area2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_j4i8j")
 
 [node name="Hitobox2" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 2)
+position = Vector2(16, -3.8743e-06)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o5t6w")
 debug_color = Color(0.964706, 0, 0.454902, 0.0588235)
 

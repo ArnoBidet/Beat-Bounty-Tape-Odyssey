@@ -20,6 +20,7 @@ script = ExtResource("1_hilsn")
 texture = ExtResource("2_1ppe8")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="Presence" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4qg4r")
@@ -42,6 +43,7 @@ position = Vector2(-252, -396)
 polygon = PackedVector2Array(-100, -48, -60, 112, -168, 296, 160, 312, 60, 104, 124, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(14, 64)
 shape = SubResource("RectangleShape2D_j352c")
 
