@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfkkibd27p8xk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clnry"]
+radius = 20.0
+
+[node name="RythmBox" type="CanvasGroup"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 205.0
+offset_bottom = 20.0
+
+[node name="Rythmhitbox" type="Area2D" parent="."]
+
+[node name="Htibox1" type="CollisionShape2D" parent="Rythmhitbox"]
+position = Vector2(13, 0)
+shape = SubResource("CircleShape2D_clnry")

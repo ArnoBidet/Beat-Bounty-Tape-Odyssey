@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @export var Speed = 1000.0
 var shoot_state : bool = 1
+@onready var skin = $Funk_Player
+#penser à ajouter une fonction qui change le skin
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,9 +15,9 @@ func move():
 	
 func aim():
 	if (get_global_mouse_position().x < global_position.x):
-		$Funk_Player.set_flip_h(true)
+		skin.set_flip_h(true)
 	else:
-		$Funk_Player.set_flip_h(false)
+		skin.set_flip_h(false)
 		
 func animation():
 	pass

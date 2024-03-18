@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xf357i23qar"]
+
+[ext_resource type="Script" path="res://Axiom/HealthComponent/healthComponent.gd" id="1_x8tk3"]
+
+[node name="HealthComponent" type="Node2D"]
+script = ExtResource("1_x8tk3")

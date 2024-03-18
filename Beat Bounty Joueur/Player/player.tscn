@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcvxvfowse8r3"]
+[gd_scene load_steps=7 format=3 uid="uid://dcvxvfowse8r3"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_wbuo1"]
 [ext_resource type="Texture2D" uid="uid://6c813tm6l6qq" path="res://Player/Sprites/Funk_Player/Idle/funk_player.png" id="2_ngxx6"]
-[ext_resource type="Script" path="res://Axiom/Health/health.gd" id="3_84kxr"]
+[ext_resource type="Script" path="res://Axiom/HealthComponent/healthComponent.gd" id="3_c28eu"]
+[ext_resource type="Script" path="res://Axiom/HitboxComponent/hitboxComponent.gd" id="4_gmcom"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_icfhf"]
 radius = 1296.02
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kc5w"]
+size = Vector2(305.5, 645)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wbuo1")
@@ -14,10 +18,7 @@ script = ExtResource("1_wbuo1")
 
 [node name="Detection_Player_Area" type="CollisionShape2D" parent="Player_Area"]
 shape = SubResource("CircleShape2D_icfhf")
-debug_color = Color(0, 0.6, 0.701961, 0.105882)
-
-[node name="Hitbox" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-109, -35, 111, -33, 64, 123, 161, 331, -195, 331, -64, 120)
+debug_color = Color(0, 0.639216, 0.360784, 0.105882)
 
 [node name="Funk_Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_ngxx6")
@@ -26,4 +27,16 @@ texture = ExtResource("2_ngxx6")
 zoom = Vector2(0.25, 0.25)
 
 [node name="Health" type="Node2D" parent="."]
-script = ExtResource("3_84kxr")
+script = ExtResource("3_c28eu")
+
+[node name="Hitbox2" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+script = ExtResource("4_gmcom")
+health = NodePath("../Health")
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="Hitbox2"]
+polygon = PackedVector2Array(-109, -35, 111, -33, 64, 123, 161, 331, -195, 331, -64, 120)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-6.75, 7.5)
+shape = SubResource("RectangleShape2D_6kc5w")
+debug_color = Color(0.505882, 0.541176, 0.564706, 0.419608)

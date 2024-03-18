@@ -1,4 +1,5 @@
-extends Node
+extends Node2D
+class_name weapon
 @export var on_floor : bool = 1
 @export var can_shoot : bool = 0
 @export var player_near : bool = 0

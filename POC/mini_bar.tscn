@@ -16,7 +16,6 @@ script = ExtResource("2_2pvex")
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-visible = false
 texture_filter = 1
 position = Vector2(-34.5, -3)
 shape = SubResource("RectangleShape2D_uki3j")

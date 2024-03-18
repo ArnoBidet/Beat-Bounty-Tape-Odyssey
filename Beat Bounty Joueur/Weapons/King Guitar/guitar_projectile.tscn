@@ -24,4 +24,4 @@ debug_color = Color(0.172549, 0.631373, 0.376471, 0.266667)
 [node name="Hitbox2" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_mul3b")
-debug_color = Color(0.862745, 0.309804, 0.47451, 0.176471)
+debug_color = Color(0, 0.643137, 0.27451, 0.176471)
