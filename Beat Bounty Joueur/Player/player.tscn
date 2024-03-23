@@ -9,22 +9,19 @@
 radius = 1296.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kc5w"]
-size = Vector2(305.5, 645)
+size = Vector2(305.5, 660)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wbuo1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
 
 [node name="Player_Area" type="Area2D" parent="."]
 
 [node name="Detection_Player_Area" type="CollisionShape2D" parent="Player_Area"]
 shape = SubResource("CircleShape2D_icfhf")
 debug_color = Color(0, 0.639216, 0.360784, 0.105882)
-
-[node name="Funk_Player" type="Sprite2D" parent="."]
-texture = ExtResource("2_ngxx6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("3_c28eu")
@@ -37,6 +34,9 @@ health = NodePath("../Health")
 polygon = PackedVector2Array(-109, -35, 111, -33, 64, 123, 161, 331, -195, 331, -64, 120)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-6.75, 7.5)
+position = Vector2(-6.75, 0)
 shape = SubResource("RectangleShape2D_6kc5w")
 debug_color = Color(0.505882, 0.541176, 0.564706, 0.419608)
+
+[node name="Funk_Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_ngxx6")
