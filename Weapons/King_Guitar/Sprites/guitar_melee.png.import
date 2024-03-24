@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2ce56ufrs0rj"
-path="res://.godot/imported/guitar_melee.png-58c9ef1238ee44ae4f7ca658e74ea414.ctex"
+path="res://.godot/imported/guitar_melee.png-51c821e11a6d4415ece62e66b53b1a75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/King Guitar/Sprites/guitar_melee.png"
-dest_files=["res://.godot/imported/guitar_melee.png-58c9ef1238ee44ae4f7ca658e74ea414.ctex"]
+source_file="res://Weapons/King_Guitar/Sprites/guitar_melee.png"
+dest_files=["res://.godot/imported/guitar_melee.png-51c821e11a6d4415ece62e66b53b1a75.ctex"]
 
 [params]
 

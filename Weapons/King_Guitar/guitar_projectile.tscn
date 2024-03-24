@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://du1mpgrjfy8hj"]
 
-[ext_resource type="Texture2D" uid="uid://nprqafweipqe" path="res://Weapons/King Guitar/Sprites/guitar_projectile.png" id="1_btnb2"]
-[ext_resource type="Script" path="res://Weapons/King Guitar/guitar_projectile.gd" id="1_iv8xs"]
+[ext_resource type="Texture2D" uid="uid://nprqafweipqe" path="res://Weapons/King_Guitar/Sprites/guitar_projectile.png" id="1_btnb2"]
+[ext_resource type="Script" path="res://Weapons/King_Guitar/guitar_projectile.gd" id="1_iv8xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5vxo"]
 size = Vector2(122, 190)
