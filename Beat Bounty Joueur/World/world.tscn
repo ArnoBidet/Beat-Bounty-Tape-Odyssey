@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb2igskc1f7n"]
+[gd_scene load_steps=6 format=3 uid="uid://cb2igskc1f7n"]
 
 [ext_resource type="Texture2D" uid="uid://coq7lv0wn8d1f" path="res://World/tileset_grassland.png" id="1_m4qo3"]
 [ext_resource type="PackedScene" uid="uid://dcvxvfowse8r3" path="res://Player/player.tscn" id="2_p1xak"]
+[ext_resource type="PackedScene" uid="uid://brg2lfucdaeyi" path="res://Hud/hud.tscn" id="3_a2lf7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1c2x5"]
 texture = ExtResource("1_m4qo3")
@@ -146,3 +147,5 @@ layer_0/tile_data = PackedInt32Array(-3276870, 65536, 10, -3211334, 65536, 10, -
 
 [node name="Player" parent="." instance=ExtResource("2_p1xak")]
 position = Vector2(-19, -105)
+
+[node name="HUD" parent="." instance=ExtResource("3_a2lf7")]

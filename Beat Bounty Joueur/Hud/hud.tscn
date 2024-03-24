@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://brg2lfucdaeyi"]
+
+[ext_resource type="Texture2D" uid="uid://cy3nhppqr1ks6" path="res://Hud/Losange.png" id="1_tj0iv"]
+[ext_resource type="PackedScene" uid="uid://dumoj7uglnfl2" path="res://Axiom/healthBarComponent.tscn" id="2_lvuhr"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="1stWeaponLayout" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -109.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_tj0iv")
+expand_mode = 2
+
+[node name="2WeaponLayout" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -38.0
+offset_right = -79.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_tj0iv")
+expand_mode = 2
+
+[node name="HealthBarComponent" parent="." instance=ExtResource("2_lvuhr")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -18.0
+offset_right = 489.0
+offset_bottom = -13.0
+grow_vertical = 0
